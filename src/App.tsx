@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import { Data } from "./Data"
+import ErrorBoundry from "./ErrorBoundary"
 const URLS = {
   USERS:
     "https://dummyjson.com/users?limit=3&select=id,firstName,lastName,gender,age",
@@ -42,7 +43,11 @@ function App() {
           Comments
         </label>
       </div>
-      <Data url={url} />
+      <ErrorBoundry fallback={<div>{"Error..."}</div>}>
+        <Suspense fallback={<div>{"Loading..."}</div>}>
+          <Data url={url} />
+        </Suspense>
+      </ErrorBoundry>
     </div>
   )
 }

@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "experimental",
-    "react-dom": "experimental"
+    "react": "^0.0.0-experimental-3554c8852-20230320",
+    "react-dom": "^0.0.0-experimental-3554c8852-20230320"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
